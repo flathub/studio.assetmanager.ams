@@ -59,12 +59,10 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://assetmanager.studio/dl/0.0.29/asset-manager-studio_0.0.29_amd64.deb
-        sha256: 354fc34610673249c33ed5c3ca25a4aa2630797ff88926d4eefdb563dcc85dbe
+        url: https://assetmanager.studio/dl/0.0.30/asset-manager-studio_0.0.30_amd64.deb
+        sha256: 37825bdec8fb950692e65d23df9632e25e48a8b3b0da29425c994a9334a4d9d0
       - type: script
         dest-filename: ams.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - exec zypak-wrapper /app/asset-manager-studio/asset-manager-studio "$@"
-
-
