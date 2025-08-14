@@ -60,8 +60,8 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://assetmanager.studio/dl/1.0.0/asset-manager-studio_1.0.0_amd64.deb
-        sha256: 2555328c690b923d5847304c18356831acecbd0d68e6d1f2ab87ae888a45daba
+        url: https://assetmanager.studio/dl/1.0.0/asset-manager-studio_1.0.0a_amd64.deb
+        sha256: 1abb5c2279583ef6c99b53c741e6b04e274e8ce9e68690e8567f9d0d4239b134
       - type: script
         dest-filename: ams.sh
         commands:
