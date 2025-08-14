@@ -31,13 +31,14 @@ modules:
       # Extract .deb & and copy the data to where it belongs
       - ar -x asset-manager-studio*.deb
       - tar -xf data.tar.xz
-      - cp --preserve --recursive opt/* usr/* $FLATPAK_DEST
+      - cp --preserve --recursive usr/* $FLATPAK_DEST
+      - cp --preserve --recursive "opt/Asset Manager Studio/" $FLATPAK_DEST/asset-manager-studio/
 
       # Install our application script
       - install -Dm755 ams.sh $FLATPAK_DEST/bin/ams
 
       # Copy our metadata file from upstream deb
-      - install -Dm644 "opt/asset-manager-studio/resources/${FLATPAK_ID}.metainfo.xml" "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+      - install -Dm644 "opt/Asset Manager Studio/resources/${FLATPAK_ID}.metainfo.xml" "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
 
       # update Desktop file
       - desktop-file-edit --set-key=Exec --set-value="ams %U" $FLATPAK_DEST/share/applications/asset-manager-studio.desktop
@@ -59,8 +60,8 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://assetmanager.studio/dl/0.0.30/asset-manager-studio_0.0.30_amd64.deb
-        sha256: 37825bdec8fb950692e65d23df9632e25e48a8b3b0da29425c994a9334a4d9d0
+        url: https://assetmanager.studio/dl/1.0.0/asset-manager-studio_1.0.0a_amd64.deb
+        sha256: 1abb5c2279583ef6c99b53c741e6b04e274e8ce9e68690e8567f9d0d4239b134
       - type: script
         dest-filename: ams.sh
         commands:
