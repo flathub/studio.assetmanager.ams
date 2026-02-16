@@ -1,17 +1,18 @@
 app-id: studio.assetmanager.ams
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '24.08'
+base-version: '25.08'
 command: ams
 finish-args:
   # X11 performance
   - --share=ipc
+  # Wayland/x11 support
+  - --socket=wayland
+  - --socket=fallback-x11
   # Access to network
   - --share=network
-  # Access to X11
-  - --socket=x11
   # Audio Access
   - --socket=pulseaudio
   # Access to all files
