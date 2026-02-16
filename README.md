@@ -2,7 +2,7 @@
 See https://flathub.org/apps/details/studio.assetmanager.ams for details.
 
 # verify the manifest file
-- flatpak run org.freedesktop.appstream.cli validate studio.assetmanager.ams.metainfo.xml
+- flatpak run org.freedesktop.appstream.cli validate ../launcher/buildResources/studio.assetmanager.ams.metainfo.xml
 
 # Local build
 - Use `flatpak run org.flatpak.Builder --force-clean --sandbox --install-deps-from=flathub --ccache --repo=repo --user --mirror-screenshots-url=https://dl.flathub.org/media/ --install builddir studio.assetmanager.ams.yaml` command to build & install the app into the local `repo` repository. 
