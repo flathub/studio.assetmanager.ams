@@ -8,9 +8,11 @@ command: ams
 finish-args:
   # X11 performance
   - --share=ipc
+  # We Require x11 support, because UNREAL fails/crashes currently under Wayland, using wayland here, force Unreal to work as wayland
+  - --socket=x11
   # Wayland/x11 support
-  - --socket=wayland
-  - --socket=fallback-x11
+  # - --socket=wayland
+  # - --socket=fallback-x11
   # Access to network
   - --share=network
   # Audio Access
@@ -61,10 +63,10 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://assetmanager.studio/dl/1.0.1/asset-manager-studio_1.0.1_amd64.deb
-        sha256: 42fe6df969dfe475daee2d3561503f595caba59b06f660603f4e0e343c222ae3
+        url: https://assetmanager.studio/dl/1.0.2/asset-manager-studio_1.0.2_amd64.deb
+        sha256: 8b8f355b21531d9796e32049b3157da68613a4c8a285d17c229598735f7e0a78
       - type: script
         dest-filename: ams.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
-          - exec zypak-wrapper /app/asset-manager-studio/asset-manager-studio "$@"
+          - exec zypak-wrapper /app/asset-manager-studio/asset-manager-studio --ozone-platform=x11 "$@"

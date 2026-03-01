@@ -1,6 +1,9 @@
 # Installing from the flathub.org repository
 See https://flathub.org/apps/details/studio.assetmanager.ams for details.
 
+# Update the manifest file (BEFORE building .deb)
+../launcher/buildResources/studio.assetmanager.ams.metainfo.xml
+
 # verify the manifest file
 - flatpak run org.freedesktop.appstream.cli validate ../launcher/buildResources/studio.assetmanager.ams.metainfo.xml
 
@@ -15,6 +18,7 @@ See https://flathub.org/apps/details/studio.assetmanager.ams for details.
   
 - To update the flathub version:
   - update the "studio.assetmanager.ams.metainfo.yaml" file
-  - create a new branch and create a pull request.
+  - CREATE A NEW BRANCH!!!
+  - commit and create a pull request.
   - verify the pull request output
   - merge the pull request
