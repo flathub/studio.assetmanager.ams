@@ -48,7 +48,7 @@ modules:
       - desktop-file-edit --set-icon=="${FLATPAK_ID}" "${FLATPAK_DEST}/share/applications/asset-manager-studio.desktop"
 
       # required to patch the app.asar file of an extracted application
-      - patch-desktop-filename "${FLATPAK_DEST}/asset-manager-studio/resources/app.asar"
+      - patch-electron-desktop-filename "${FLATPAK_DEST}/asset-manager-studio/resources/app.asar"
 
       # To allow separate locales
       # https://searchfox.org/mozilla-central/rev/8a4f55bc09ffc5c25dcb4586c51ae4a9fee77b4c/taskcluster/docker/firefox-flatpak/runme.sh#131-133
